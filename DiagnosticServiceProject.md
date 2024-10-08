@@ -36,11 +36,11 @@ Le système doit traiter un index de santé pour diagnostiquer des pathologies. 
 
 # Mise en œuvre avec TDD
 
-Nous suivons l'approche **Test Driven Development (TDD)**. Cela signifie que nous allons d'abord écrire les tests pour nos fonctionnalités, puis implémenter la logique qui les fait passer.
+**Test Driven Development (TDD)**. Écrire les tests pour nos fonctionnalités, puis implémenter la logique qui les fait passer.
 
 ## Écriture des Tests
 
-Voici les tests que nous allons utiliser pour vérifier les différents scénarios :
+Les tests pour vérifier les différents scénarios :
 
 ```java
 import org.junit.jupiter.api.Test;
@@ -106,18 +106,10 @@ public class DiagnosticService {
 
 ## Comment exécuter les tests
 
-1. Assurez-vous d'avoir configuré un projet Maven ou Gradle avec JUnit pour les tests unitaires.
-2. Placez les fichiers `DiagnosticServiceTest.java` et `DiagnosticService.java` dans leur répertoire approprié.
-3. Exécutez les tests à partir de votre IDE ou via la ligne de commande avec Maven/Gradle :
 
-### Pour Maven :
+### Maven :
 ```bash
 mvn test
-```
-
-### Pour Gradle :
-```bash
-gradle test
 ```
 
 Les tests doivent passer avec succès, ce qui confirme que la fonctionnalité est correctement implémentée.
