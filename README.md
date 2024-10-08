@@ -184,7 +184,14 @@ public enum Pathology {
 Pour exécuter les tests, utilisez la commande suivante :
 
 ```bash
-mvn test
+mvn clean test
 ```
+Pour générer le rapport de couverture de tests
+
+```bash
+mvn jacoco:report
+```
+
+![alt text](https://github.com/nguyentuan132/health-index/blob/main/src/main/resources/couverture.png)
 
 ---
