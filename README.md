@@ -176,7 +176,7 @@ public enum Pathology {
         return displayName;
     }
 }
-
+```
 ---
 
 ## Exécution des Tests
