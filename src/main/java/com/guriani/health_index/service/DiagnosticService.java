@@ -1,5 +1,9 @@
 package com.guriani.health_index.service;
 
+import com.guriani.health_index.model.Pathology;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Service de diagnostic pour déterminer les pathologies en fonction de l'index
  * de santé.
@@ -16,22 +20,16 @@ public class DiagnosticService implements IDiagnosticService {
      */
     @Override
     public String diagnostiquer(int indexSante) {
-        StringBuilder result = new StringBuilder();
+        List<String> result = new ArrayList<>();
 
-        // Vérifie si l'index de santé indique un problème cardiaque
-        if (indexSante % 3 == 0) {
-            result.append("Cardiologie");
-        }
-
-        // Vérifie si l'index de santé indique une fracture
-        if (indexSante % 5 == 0) {
-            if (result.length() > 0) {
-                result.append(", ");
+        // Parcourt toutes les pathologies et vérifie si l'index correspond
+        for (Pathology pathology : Pathology.values()) {
+            if (indexSante % pathology.getMultiple() == 0) {
+                result.add(pathology.getDisplayName());
             }
-            result.append("Traumatologie");
         }
 
         // Retourne le résultat ou un message d'absence de pathologie
-        return result.length() > 0 ? result.toString() : "Aucune pathologie détectée";
+        return result.isEmpty() ? "Aucune pathologie détectée" : String.join(", ", result);
     }
 }
